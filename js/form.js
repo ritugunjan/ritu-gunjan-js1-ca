@@ -9,7 +9,7 @@ const address = document.querySelector("#address");
 const addressError = document.querySelector("#addressError");
 
 
-function validateForm() {
+function validateForm(event) {
     event.preventDefault();
 
     if(checkLength(fullName.value, 0) === true) {
@@ -35,6 +35,7 @@ function validateForm() {
     } else {
         addressError.style.display = "block"
     }
+}
     
 console.log("Hello");
 
@@ -52,5 +53,4 @@ function validateEmail(email) {
     const regEx = /\S+@\S+\.\S+/;
     const patternMatches = regEx.test(email);
     return patternMatches;
-}
 }
